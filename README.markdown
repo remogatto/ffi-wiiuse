@@ -1,6 +1,6 @@
 `wiiuse_ffi` is a Ruby binding of wiiuse C library.
 
-Actually, wiiuse_ffi is just for fun and it's almost useless :-)
+Actually, `wiiuse_ffi` is just for fun and it's almost useless :-)
 
 See the examples in `examples/`.
 
