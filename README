@@ -1,9 +1,0 @@
-wiiuse_ffi is a Ruby binding of wiiuse C library. It uses Ruby FFI to
-bind with the C API.
-
-REQUIREMENTS
-
-* wiiuse C library
-* Ruby FFI
-
-
