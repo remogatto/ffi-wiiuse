@@ -27,6 +27,10 @@ PROJ.rubyforge.name = 'ffi-wiiuse'
 
 PROJ.readme_file = 'README.rdoc'
 
+PROJ.ann.paragraphs << 'FEATURES' << 'SYNOPSIS' << 'REQUIREMENTS' << 'INSTALL'
+PROJ.ann.email[:to] << 'dev@ruby-ffi.kenai.com' << 'users@ruby-ffi.kenai.com'
+PROJ.ann.email[:server] = 'out.alice.it'
+
 PROJ.spec.opts << '--color'
 PROJ.ruby_opts = []
 

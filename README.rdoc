@@ -4,19 +4,27 @@ ffi-wiiuse
 
 == DESCRIPTION:
 
-This is a ruby binding of the wiiuse C library. The binding is based
-on ruby FFI so it doesn't need any compilation step. Note that
+ffi-wiiuse is a ruby wrapper around wiiuse, a C library that handles
+the connection with Nintendo Wiimote devices. The binding is based on
+ruby FFI so it doesn't need any compilation step. Please, note that
 ffi-wiiuse API is a mere translation of wiiuse C API: no idiomatic
 ruby inside!
 
 == FEATURES/PROBLEMS:
 
-* full binding to the wiiuse C library
+* full wrap around wiiuse C API
+* support for:
+  * buttons
+  * motion sensing
+  * IR tracking
+  * expansion devices: nunchuk, classic controller, Guitar Hero 3
+    controller
 * based on FFI so it doesn't need compilation
+* Ruby 1.9.1 compatible
 
 == SYNOPSIS:
 
-See examples/example.rb
+See examples/example.rb.
 
 == REQUIREMENTS:
 
@@ -25,9 +33,9 @@ See examples/example.rb
 
 == INSTALL:
 
-To download the latest snapshot:
-
-  git clone git://github.com/remogatto/ffi-wiiuse.git 
+  git clone git://github.com/remogatto/ffi-wiiuse.git
+  cd ffi-wiiuse	 
+  sudo rake gem:install
 
 == LICENSE:
 

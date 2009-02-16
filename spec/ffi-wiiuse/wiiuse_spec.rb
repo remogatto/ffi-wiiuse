@@ -77,14 +77,6 @@ describe Wiiuse do
   it 'should return the wiiuse C library version' do
     Wiiuse.wiiuse_version.should =~ /\d+/
   end
-  it 'should rumble the wiimote for one second' do
-    Wiiuse.wiiuse_rumble(wiimote, 1)
-  end
-  it 'should toggle the rumble' do
-    Wiiuse.wiiuse_toggle_rumble(wiimote)
-    sleep 1
-    Wiiuse.wiiuse_toggle_rumble(wiimote)
-  end
   it 'should set leds' do
     (1..4).each do |led_id|
       Wiiuse.wiiuse_set_leds(wiimote, eval("Wiiuse::WIIMOTE_LED_#{led_id}"))
