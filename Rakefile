@@ -30,6 +30,6 @@ PROJ.readme_file = 'README.rdoc'
 PROJ.spec.opts << '--color'
 PROJ.ruby_opts = []
 
-depend_on 'ffi', '0.3.0
+depend_on 'ffi', '0.3.0'
 
 # EOF
