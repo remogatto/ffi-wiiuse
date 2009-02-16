@@ -5,7 +5,9 @@ ffi-wiiuse
 == DESCRIPTION:
 
 This is a ruby binding of the wiiuse C library. The binding is based
-on ruby FFI so it doesn't need any compilation step.
+on ruby FFI so it doesn't need any compilation step. Note that
+ffi-wiiuse API is a mere translation of wiiuse C API: no idiomatic
+ruby inside!
 
 == FEATURES/PROBLEMS:
 
@@ -14,7 +16,7 @@ on ruby FFI so it doesn't need any compilation step.
 
 == SYNOPSIS:
 
-  FIXME (code sample of usage)
+See examples/example.rb
 
 == REQUIREMENTS:
 
