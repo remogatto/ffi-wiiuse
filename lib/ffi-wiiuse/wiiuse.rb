@@ -1,3 +1,4 @@
+
 require 'ffi'
 
 module Wiiuse
@@ -65,8 +66,7 @@ module Wiiuse
   EXP_GUITAR_HERO_3 = 3
   WIIUSE_IR_ABOVE = 0
   WIIUSE_IR_BELOW = 1
-  WIIUSE_ASPECT_4_3 = 0
-  WIIUSE_ASPECT_16_9 = 1
+
   WIIUSE_NONE = 0
   WIIUSE_EVENT = 1
   WIIUSE_CLASSIC_CTRL_REMOVED = 10
@@ -80,15 +80,15 @@ module Wiiuse
   WIIUSE_NUNCHUK_INSERTED = 7
   WIIUSE_NUNCHUK_REMOVED = 8
   WIIUSE_CLASSIC_CTRL_INSERTED = 9
+
+  WIIUSE_ASPECT_4_3 = 0
+  WIIUSE_ASPECT_16_9 = 1
+
   MAX_PAYLOAD = 32
-  class BdaddrT < FFI::Struct
-    layout(
-           :b, [:uchar, 6]
-    )
-  end
+  callback(:wiiuse_read_cb, [ :pointer, :pointer, :ushort ], :void)
   class ReadReqT < FFI::Struct
     layout(
-           :cb, :pointer,
+           :cb, :wiiuse_read_cb,
            :buf, :pointer,
            :addr, :uint,
            :size, :ushort,
@@ -246,6 +246,11 @@ module Wiiuse
            :accel, Vec3bT
     )
   end
+  class BdaddrT < FFI::Struct
+    layout(
+           :b, [:uchar, 6]
+    )
+  end
   class WiimoteT < FFI::Struct
     layout(
            :unid, :int,
@@ -305,5 +310,5 @@ module Wiiuse
   attach_function :wiiuse_set_ir_sensitivity, [ :pointer, :int ], :void
   attach_function :wiiuse_set_nunchuk_orient_threshold, [ :pointer, :float ], :void
   attach_function :wiiuse_set_nunchuk_accel_threshold, [ :pointer, :int ], :void
-end
 
+end
